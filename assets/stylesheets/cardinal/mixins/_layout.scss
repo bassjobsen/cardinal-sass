@@ -1,0 +1,70 @@
+/* mixins */
+
+/* Grid gutters */
+
+@mixin prefixedgutters($prefix) {
+.$prefixgrid-gutter-none                { margin-left: 0;                   }
+.$prefixgrid-gutter-none > .grid-item   { padding-left: 0;                  }
+.$prefixgrid-gutter-half                { margin-left: -($grid-gutter / 2); }
+.$prefixgrid-gutter-half > .grid-item   { padding-left: ($grid-gutter / 2); }
+.$prefixgrid-gutter-whole               { margin-left: -($grid-gutter);     }
+.$prefixgrid-gutter-whole > .grid-item  { padding-left: ($grid-gutter);     }
+.$prefixgrid-gutter-double              { margin-left: -($grid-gutter * 2); }
+.$prefixgrid-gutter-double > .grid-item { padding-left: ($grid-gutter * 2); }
+}
+
+@mixin gutters(){
+@include prefixedgutters("");
+}
+
+@mixin gutters($prefix) {
+@include prefixedgutters(#{$prefix-});
+}
+
+/* Widths */
+
+@mixin prefixedwidths($prefix) {
+.$prefixone-whole     { width: 100%;    }
+.$prefixone-half      { width: 50%;     }
+.$prefixone-third     { width: 33.333%; }
+.$prefixtwo-thirds    { width: 66.666%; }
+.$prefixone-fourth    { width: 25%;     }
+.$prefixtwo-fourths   { width: 50%;     }
+.$prefixthree-fourths { width: 75%;     }
+.$prefixone-fifth     { width: 20%;     }
+.$prefixtwo-fifths    { width: 40%;     }
+.$prefixthree-fifths  { width: 60%;     }
+.$prefixfour-fifths   { width: 80%;     }
+.$prefixone-sixth     { width: 16.666%; }
+.$prefixtwo-sixths    { width: 33.333%; }
+.$prefixthree-sixths  { width: 50%;     }
+.$prefixfour-sixths   { width: 66.666%; }
+.$prefixfive-sixths   { width: 83.333%; }
+.$prefixwidth-auto    { width: auto;    }
+}
+
+@mixin widths() {
+@include prefixedwidths("");
+}
+
+@mixin widths($prefix) {
+@include prefixedwidths(#{$prefix-});
+}
+
+/**
+ * Floats ($floats)
+ */
+
+@mixin prefixedfloats($prefix) {
+.$prefixfloat-left   { float: left;  }
+.$prefixfloat-right  { float: right; }
+.$prefixfloat-none   { float: none;  }
+}
+
+@mixin floats() {
+@include prefixedfloats("");
+}
+
+@mixin floats($prefix) {
+@include prefixedfloats(#{$prefix-});
+}
