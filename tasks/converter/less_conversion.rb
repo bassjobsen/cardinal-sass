@@ -89,9 +89,10 @@ class Converter
     end
 
     def bootstrap_less_files
-      @bootstrap_less_files ||= get_paths_by_type('less', /\.less$/) +
-        get_paths_by_type('mixins', /\.less$/,
-                          get_tree(get_tree_sha('mixins', get_tree(get_tree_sha('less'))))).map { |p| "mixins/#{p}" }
+      @bootstrap_less_files ||= get_paths_by_type('less', /\.less$/) 
+      #+
+      #  get_paths_by_type('mixins', /\.less$/,
+      #                    get_tree(get_tree_sha('mixins', get_tree(get_tree_sha('less'))))).map { |p| "mixins/#{p}" }
     end
 
     # apply general less to scss conversion

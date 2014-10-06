@@ -34,7 +34,7 @@ class Converter
   include JsConversion
   include FontsConversion
 
-  def initialize(repo: 'bassjobsen/cardinal-sass', branch: 'master', save_to: {}, cache_path: 'tmp/converter-cache-bootstrap')
+  def initialize(repo: 'cbracco/cardinal', branch: 'master', save_to: {}, cache_path: 'tmp/converter-cache-bootstrap')
     @logger     = Logger.new
     @repo       = repo
     @branch     = branch || 'master'

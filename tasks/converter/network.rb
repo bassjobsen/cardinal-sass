@@ -68,6 +68,7 @@ class Converter
 
     # Get the sha of a dir
     def get_tree_sha(dir, tree = get_trees)
+      log dir
       tree['tree'].find { |t| t['path'] == dir }['sha']
     end
 
